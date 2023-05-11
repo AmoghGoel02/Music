@@ -1,171 +1,60 @@
-const music = new Audio('Songs/BURN IT DOWN (Official Video) - Linkin Park.mp3');
+const music = new Audio('Songs/Linkin Park/1.mp3');
 //music.play();
 const songs = [
     {
        id:'1',
        songName:`Faint <br>
        <div class="subtitle">Linkin Park</div>` ,
-       poster:"img/1.jpg"
+       poster:"img/Linkin Park/1.jpg"
     },
     {
         id:'2',
         songName:`Burn It Down<br>
         <div class="subtitle">Linkin Park</div>`,
-        poster:"img/2.jpg"
+        poster:"img/Linkin Park/2.jpg"
     },
     {
         id:'3',
         songName:`Castle of Glass <br>
         <div class="subtitle">Linkin Park</div>`,
-        poster:"img/3.jpg"
+        poster:"img/Linkin Park/3.jpg"
     },
     {
         id:'4',
         songName:`What I've Done<br>
         <div class="subtitle">Linkin Park</div>`,
-        poster:"img/4.jpg"
+        poster:"img/Linkin Park/4.jpg"
     },
     {
         id:'5',
-        songName:`Somewhere I Belong <br>
+        songName:`Somewhere I Belong<br>
         <div class="subtitle">Linkin Park</div>`,
-        poster:"img/5.jpg"
-    },
+        poster:"img/Linkin Park/5.jpg"
+    }, 
     {
         id:'6',
-        songName:`Roads Untraveled <br>
+        songName:`Roads Untraveled<br>
         <div class="subtitle">Linkin Park</div>`,
-        poster:"img/6.jpg"
-    },
+        poster:"img/Linkin Park/5.jpg"
+    }, 
     {
         id:'7',
-        songName:`Radioactive <br>
-        <div class="subtitle">Imagine Dragons</div>`,
-        poster:"img/7.jpg"
-    },
+        songName:`Easier To Run<br>
+        <div class="subtitle">Linkin Park</div>`,
+        poster:"img/Linkin Park/5.jpg"
+    }, 
     {
         id:'8',
-        songName:`Whatever It Takes <br>
-        <div class="subtitle">Imagine Dragons</div>`,
-        poster:"img/8.jpg"
-    },
-    {
-        id:'9',
-        songName:`Thunder <br>
-        <div class="subtitle">Imagine Dragons</div>`,
-        poster:"img/9.jpg"
-    },
-    {
-        id:'10',
-        songName:`Zero <br>
-        <div class="subtitle">Imagine Dragons</div>`,
-        poster:"img/10.jpg"
-    },
-    {
-        id:'11',
-        songName:`Bad Liar <br>
-        <div class="subtitle">Imagine Dragons</div>`,
-        poster:"img/11.jpg"
-    },
-    {
-        id:'12',
-        songName:`Friction <br>
-        <div class="subtitle">Imagine Dragons</div>`,
-        poster:"img/12.jpg"
-    },
-    {
-        id:'13',
-        songName:`Better Now <br>
-        <div class="subtitle">Post Malone</div>`,
-        poster:"img/13.jpg"
-    },
-    {
-        id:'14',
-        songName:`Wow <br>
-        <div class="subtitle">Post Malone</div>`,
-        poster:"img/14.jpg"
-    },
-    {
-        id:'15',
-        songName:`Sunflower<br>
-        <div class="subtitle">Post Malone</div>`,
-        poster:"img/15.jpg"
-    },
-    {
-        id:'16',
-        songName:`Not Afraid <br>
-        <div class="subtitle">Eminem</div>`,
-        poster:"img/16.jpg"
-    },
-    {
-        id:'17',
-        songName:`Take What You Want <br>
-        <div class="subtitle">Post Malone</div>`,
-        poster:"img/17.jpg"
-    },
-    {
-        id:'18',
-        songName:`Blinding Lights <br>
-        <div class="subtitle">The Weeknd</div>`,
-        poster:"img/18.jpg"
-    },
-    {
-        id:'19',
-        songName:`Hey Brother <br>
-        <div class="subtitle">Avicii</div>`,
-        poster:"img/19.jpg"
-    },
-    {
-        id:'20',
-        songName:`Rocketman <br>
-        <div class="subtitle">Elton John</div>`,
-        poster:"img/20.jpg"
-    },
+        songName:`In The End<br>
+        <div class="subtitle">Linkin Park</div>`,
+        poster:"img/Linkin Park/5.jpg"
+    }, 
 ]
 
 Array.from(document.getElementsByClassName('songItem')).forEach((element, i)=>{
     element.getElementsByTagName('img')[0].src = songs[i].poster;
     element.getElementsByTagName('h5')[0].innerHTML = songs[i].songName;
 })
-
-//search data start
-let search_results = document.getElementsByClassName('search_results')[0];
-songs.forEach(element => {
-    const {id, songName, poster} = element;
-   // console.log(id);
-   let card = document.createElement('a');
-   card.classList.add('card');
-   card.href ="#"+ id;
-   card.innerHTML = `<img src="${poster}" alt="">
-   <div class="content">
-     ${songName}
-   </div> `;
-   search_results.appendChild(card);
-})
-
-let input = document.getElementsByTagName('input')[0];
-
-input.addEventListener('keyup', ()=>{
-    let input_value = input.value.toUpperCase();
-    let items = search_results.getElementsByTagName('a');
-
-    for (let index = 0; index < items.length; index++) {
-        let as = items[index].getElementsByClassName('content')[0];
-        let text_value = as.textContent || as.innerHTML;
-        if (text_value.toUpperCase().indexOf(input_value)>-1){
-            items[index].style.display = "flex";
-        } else {
-            items[index].style.display = "none";
-        }
-        if (input.value == 0) {
-            search_results.style.display="none";
-        } else {
-            search_results.style.display="";
-            
-        }
-    }
-})
-//search data end
 
 let MasterPlay = document.getElementById('MasterPlay');
 let wave = document.getElementsByClassName('wave')[0];
@@ -206,12 +95,12 @@ let title = document.getElementById('title');
 Array.from(document.getElementsByClassName('playListPlay')).forEach((element)=>{
     element.addEventListener('click',(e)=>{
        index= e.target.id;
-       music.src=`Songs/${index}.mp3`;
-       poster_master_play.src=`img/${index}.jpg`;
+       music.src=`Songs/Linkin Park/${index}.mp3`;
+       poster_master_play.src=`img/Linkin Park/${index}.jpg`;
        music.play();
        MasterPlay.classList.remove('bi-play-fill');
        MasterPlay.classList.add('bi-pause-fill');
-       download_music.href = `Songs/${index}.mp3`;
+       download_music.href = `Songs/Linkin Park/${index}.mp3`;
        let song_title = songs.filter((ele)=>{
             return ele.id == index;
        });
@@ -312,8 +201,8 @@ back.addEventListener('click',()=>{
     if(index < 1){
         index = Array.from(document.getElementsByClassName('songItem')).length;   
      }
-     music.src=`Songs/${index}.mp3`;
-       poster_master_play.src=`img/${index}.jpg`;
+     music.src=`Songs/Linkin Park/${index}.mp3`;
+       poster_master_play.src=`img/Linkin Park/${index}.jpg`;
        music.play();
        MasterPlay.classList.remove('bi-play-fill');
        MasterPlay.classList.add('bi-pause-fill');
@@ -338,7 +227,7 @@ next.addEventListener('click',()=>{
             if(index > Array.from(document.getElementsByClassName('songItem')).length){
                 index = 1;    
              }
-             music.src=`Songs/${index}.mp3`;
+             music.src=`Songs/Linkin Park/${index}.mp3`;
                poster_master_play.src=`img/${index}.jpg`;
                music.play();
                MasterPlay.classList.remove('bi-play-fill');
@@ -417,12 +306,12 @@ const next_music = () => {
   }else{
         index++;
   }
-   music.src=`Songs/${index}.mp3`;
-   poster_master_play.src=`img/${index}.jpg`;
+   music.src=`Songs/Linkin Park/${index}.mp3`;
+   poster_master_play.src=`img/Linkin Park/${index}.jpg`;
    music.play();
    MasterPlay.classList.remove('bi-play-fill');
    MasterPlay.classList.add('bi-pause-fill');
-   download_music.href = `Songs/${index}.mp3`;
+   download_music.href = `Songs/Linkin Park/${index}.mp3`;
    let song_title = songs.filter((ele)=>{
         return ele.id == index;
    });
@@ -442,12 +331,12 @@ wave.classList.add('active2');
 
 const repeat_music = () => {
     index ;
-  music.src=`Songs/${index}.mp3`;
-  poster_master_play.src=`img/${index}.jpg`;
+  music.src=`Songs/Linkin Park/${index}.mp3`;
+  poster_master_play.src=`img/Linkin Park/${index}.jpg`;
   music.play();
   MasterPlay.classList.remove('bi-play-fill');
   MasterPlay.classList.add('bi-pause-fill');
-  download_music.href = `Songs/${index}.mp3`;
+  download_music.href = `Songs/Linkin Park/${index}.mp3`;
   let song_title = songs.filter((ele)=>{
        return ele.id == index;
   });
@@ -471,8 +360,8 @@ const random_music = () => {
     } else {
         index = Math.floor((Math.random() * songs.length) + 1);
     }
-    music.src=`Songs/${index}.mp3`;
-    poster_master_play.src=`img/${index}.jpg`;
+    music.src=`Songs/Linkin Park/${index}.mp3`;
+    poster_master_play.src=`img/Linkin Park/${index}.jpg`;
     music.play();
     MasterPlay.classList.remove('bi-play-fill');
     MasterPlay.classList.add('bi-pause-fill');

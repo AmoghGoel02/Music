@@ -20,6 +20,7 @@ header{
     flex-wrap: wrap;
     overflow: hidden;
 }
+
 header .menu_side, .song_side{
     position: relative;
     width: 25%;
@@ -47,6 +48,27 @@ header .menu_side h1{
 header .menu_side .playlist{
     margin: 40px 0 0 20px;
 }
+header .menu_side .playlist a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
+}
+header .menu_side .playlist .Daily{
+    display: flex;
+      align-items: center;
+      font-size: 18.5px;
+      font-weight: 400;
+      padding-bottom: 2px;
+      color: #fff;
+      transition: 0.3s linear;
+      cursor: pointer;
+      text-decoration: none;
+  }
+header .menu_side .playlist .Daily:hover{
+    color:#36e2ec;
+    text-decoration: underline;
+  }
+
 header .menu_side .playlist h4{
     font-size: 14px;
     font-weight: 400;
@@ -245,6 +267,8 @@ header .master_play .icon .shuffle{
    align-items: center;
   }
   header .master_play .icon #download_music {
+    text-decoration: none;
+    color: #fff;
     font-size: 20px;
     margin-left: 10px;
    }
@@ -389,9 +413,11 @@ header .song_side::before{
     position: absolute;
     width:100% ;
     height: 300px;
-    background: url(Covers/17.jpg) ;
-    background-position:center ;
+    background: url(img/17.jpg) ;
+    background-position:right ;
+    background-repeat: no-repeat;
     z-index: -1;
+    /*filter: blur(5px);*/
 }
 header .song_side nav{
     width:90%;
@@ -414,6 +440,7 @@ header .song_side nav ul li{
     cursor: pointer;
     transition: .3s linear;
 }
+
  
 header .song_side nav ul li:hover{
     color:#fff ;
@@ -451,6 +478,55 @@ header .song_side nav .search::before{
    backdrop-filter: blur(5px);
    z-index: -1;
 }
+header .song_side nav .search .search_results{
+    position:absolute;
+    width:100%;
+    height: 200px;
+  /*  border:1px solid #fff;
+   background: rgb(184, 184, 184, .1);*/
+   margin-top: 10px;
+   border-radius: 10px;
+   overflow: auto;
+}
+header .song_side nav .search .search_results::-webkit-scrollbar{
+   display: none;
+}
+header .song_side nav .search .search_results .card{
+    width:100%;
+    min-height: 45px;
+  /*  border:1px solid #fff; */
+    display: flex;
+    align-items: center;
+    background: rgb(184, 184, 184, .1);
+    margin-bottom: 5px;
+    text-decoration: none;
+    display:none;
+}
+header .song_side nav .search .search_results .card img{
+    width:35px;
+    height: 35px;
+    border-radius:21px;
+}
+header .song_side nav .search .search_results .card .content{
+    width:80%;
+    height: 100%;
+    border-radius:21px;
+   /* border:1px solid #fff;*/
+    padding:0;
+    font-size:13px;
+    font-weight: 600;
+    color:#fff;
+}
+header .song_side nav .search .search_results .card .content .subtitle{
+    width:80%;
+    height: 100%;
+    border-radius:21px;
+  /*  border:1px solid #fff;*/
+    padding:0;
+    font-size:11px;
+    font-weight: 500;
+    color:#a4a8b4;
+}
 header .song_side nav .search .bi{
     font-size: 13px;
     padding: 3px 0px 0px 10px;    
@@ -482,7 +558,7 @@ header .song_side .content{
     height: 30%;
     margin: auto;
     /*border:1px solid #fff;*/
-    padding-top: 20px;
+    padding-top: 7px;
 }
 header .song_side .content h1{
     font-size: 25px;
@@ -528,7 +604,7 @@ header .song_side .popular_song{
     height: auto;
     /*border: 1px solid #fff;*/
     margin: auto;
-    margin-top: 15px;
+    margin-top: 30px;
 }
 header .song_side .popular_song .h4{
    display: flex;
@@ -648,4 +724,87 @@ header .song_side .popular_artists .item li img{
     width: 100%;
     position: absolute;
     border-radius: 50%;
+}
+
+/* login style */
+header .left_bx1, .right_bx1{
+ position: relative;
+ width: 65%;
+ height: 100%;
+ background: #0b1320; 
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+header .left_bx1{
+    width: 35%;
+   /* box-shadow: 5px 0px 2px #090f1f;*/
+    background: #fff; 
+   }
+header .left_bx1 .content{
+    width: 75%;
+    height: auto;
+    border:none;
+    padding: 25px 20px;
+    background: #fff; 
+   }
+header .left_bx1 .content .card{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;  
+}
+header .left_bx1 .content .card label{
+     font-size: 14px;
+}
+header .left_bx1 .content .card input{
+    width:100%;
+    padding: 6px 10px;
+    border: 1px solid rgb(154, 154, 154);
+    background: rgb(238, 238, 238);
+    margin-top: 5px;
+}
+header .left_bx1 .content  .submit{
+    margin-top: 30px;
+    padding: 8px 20px;
+    color: #fff ;
+    background: #111727;
+    width: 100%;
+    cursor: pointer;
+}
+header .left_bx1 .content  .check{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+header .left_bx1 .content .check span{
+    margin-left: 5px;
+    font-size: 13px;
+}
+header .left_bx1 .content p{
+    margin-top: 90px;
+    text-align: center;
+    font-size: 13px;
+}
+header .left_bx1 .content p a{
+    text-decoration: none;
+    color: #5adae0;
+    font-weight: bold;
+}
+header .right_bx1 img{
+    width:100%;
+    height:100%;
+    background-position: center;
+}
+header .right_bx1 h3{
+    position: absolute;
+    background: #111727;
+    color: #fff;
+    right: 0;
+    bottom: 20px;
+    padding: 3px 10px;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 13px;
 }
